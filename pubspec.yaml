@@ -1,0 +1,32 @@
+name: hrms
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  camera: ^0.11.0+2
+  detect_fake_location: ^2.1.0
+  dio: ^5.7.0
+  flutter:
+    sdk: flutter
+  geolocator: ^13.0.2
+  google_fonts: ^6.2.1
+  provider: ^6.1.2
+  shared_preferences: ^2.3.5
+  smooth_page_indicator: ^1.2.0+3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+  - assets/
+  - assets/Onboarding/
+  - assets/icons/
