@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hrms/routes/app_routes.dart';
 import 'package:hrms/utils/themes/colors.dart';
 import 'package:hrms/utils/widgets/button/default_btn.dart';
 import 'package:hrms/utils/widgets/footer.dart';
@@ -23,7 +24,7 @@ class LoginScreen extends StatelessWidget {
                   const SizedBox(height: 24),
                   _buildWelcomeText(),
                   const SizedBox(height: 16),
-                  _buildForm(),
+                  _buildForm(context),
                 ],
               ),
             ),
@@ -80,7 +81,7 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildForm() {
+  Widget _buildForm(BuildContext context) {
     return SizedBox(
       width: double.infinity,
       child: Column(
@@ -120,6 +121,10 @@ class LoginScreen extends StatelessWidget {
             fgcolor: AppColors.white,
             onPressed: () {
               // Handle login action
+              Navigator.pushReplacementNamed(
+                context,
+                AppRoutes.home,
+              );
             },
           ),
         ],

@@ -12,9 +12,13 @@ class ContentOnboard extends StatelessWidget {
     return Column(
       children: [
         Expanded(
-          child: Image.asset(
-            image,
-            height: 318,
+          child: Padding(
+            padding: const EdgeInsets.all(40.0),
+            child: Image.asset(
+              image,
+              height: 318,
+              fit: BoxFit.contain,
+            ),
           ),
         ),
         Container(
