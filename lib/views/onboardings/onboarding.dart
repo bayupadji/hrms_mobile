@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:hrms/routes/app_routes.dart';
 import 'package:provider/provider.dart';
@@ -18,20 +20,17 @@ class Onboarding extends StatelessWidget {
     final List<Map<String, String>> contentList = [
       {
         'title': 'Keep up with your team\'s attendance',
-        'description':
-            'Easily take attendance of your team, no matter how big or small there are. Take this attendance manually, automatically or set a recurring attendance method.',
+        'description': 'Easily take attendance of your team, no matter how big or small there are. Take this attendance manually, automatically or set a recurring attendance method.',
         'image': 'assets/Onboarding/keepupteams.png',
       },
       {
         'title': 'Manage schedules effectively',
-        'description':
-            'Create, update, and share schedules with your team seamlessly. Ensure everyone is on the same page with minimal effort.',
+        'description': 'Create, update, and share schedules with your team seamlessly. Ensure everyone is on the same page with minimal effort.',
         'image': 'assets/Onboarding/organised.png',
       },
       {
         'title': 'Track productivity effortlessly',
-        'description':
-            'Gain insights into your team\'s productivity and attendance trends. Make informed decisions based on real-time data.',
+        'description': 'Gain insights into your team\'s productivity and attendance trends. Make informed decisions based on real-time data.',
         'image': 'assets/Onboarding/discover.png',
       },
     ];
@@ -95,7 +94,8 @@ class Onboarding extends StatelessWidget {
                       text: 'Login',
                       fgcolor: AppColors.darkBlue500,
                       bgcolor: AppColors.lemon500,
-                      onPressed: () {
+                      onPressed: () async {
+                        await onboardingProvider.markOnboardingComplete();
                         onboardingProvider.stopAutoScroll();
                         Navigator.pushReplacementNamed(
                           context,

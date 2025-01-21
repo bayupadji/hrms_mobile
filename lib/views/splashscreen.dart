@@ -9,7 +9,7 @@ class Splashscreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Provider.of<SplashProvider>(context, listen: false).navigateToOnboarding(context);
+    Provider.of<SplashProvider>(context, listen: false).navigateBasedOnOnboardingStatus(context);
 
     return Scaffold(
       backgroundColor: AppColors.darkBlue900,
