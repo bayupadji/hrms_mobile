@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hrms/routes/app_routes.dart';
 import 'package:hrms/utils/themes/colors.dart';
 
 class Navbar extends StatefulWidget {
@@ -23,6 +24,31 @@ class _NavbarState extends State<Navbar> {
     setState(() {
       selectedIndex = index;
     });
+
+    switch (index) {
+      case 0:
+        // Aksi untuk Home
+        Navigator.pushReplacementNamed(context, AppRoutes.home);
+        break;
+      case 1:
+        // Aksi untuk Employee
+        Navigator.pushReplacementNamed(context, AppRoutes.employee);
+        break;
+      case 2:
+        // Aksi untuk Schedule
+        Navigator.pushReplacementNamed(context, AppRoutes.schedule);
+        break;
+      case 3:
+        // Aksi untuk Inbox
+        Navigator.pushReplacementNamed(context, AppRoutes.inbox);
+        break;
+      case 4:
+        // Aksi untuk Profile
+        Navigator.pushReplacementNamed(context, AppRoutes.profile);
+        break;
+      default:
+        break;
+    }
   }
 
   @override
