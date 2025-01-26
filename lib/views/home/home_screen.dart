@@ -40,16 +40,27 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              HeaderHome(),
-              SizedBox(height: 16,),
-              MenuHome(),
-            ]
+        child: RefreshIndicator(
+          onRefresh: () {
+            return Future.delayed(Duration(seconds: 1));
+          },
+          color: AppColors.darkBlue500,
+          backgroundColor: AppColors.white,
+          elevation: 0,
+          triggerMode: RefreshIndicatorTriggerMode.anywhere,
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Column(
+              children: [
+                HeaderHome(),
+                SizedBox(height: 16,),
+                MenuHome(),
+              ]
+            ),
           ),
         ),
       ),
+      // bottomNavigationBar: ,
     );
   }
 }
