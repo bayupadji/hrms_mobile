@@ -40,12 +40,14 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            HeaderHome(),
-            SizedBox(height: 16,),
-            MenuHome(),
-          ]
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              HeaderHome(),
+              SizedBox(height: 16,),
+              MenuHome(),
+            ]
+          ),
         ),
       ),
     );

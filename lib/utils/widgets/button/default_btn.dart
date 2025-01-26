@@ -32,7 +32,8 @@ class DefaultBtn extends StatelessWidget {
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(18)
           )
-        )
+        ),
+        minimumSize: WidgetStateProperty.all(Size(width ?? double.infinity, 56)),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
